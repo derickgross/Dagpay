@@ -1,7 +1,9 @@
-DROP TABLE dbo.Dependents
+IF OBJECT_ID('dbo.Dependents') IS NOT NULL
+    DROP TABLE dbo.Dependents
 GO
 
-DROP TABLE dbo.Employees
+IF OBJECT_ID('dbo.Employees') IS NOT NULL
+    DROP TABLE dbo.Employees
 GO
 
 CREATE TABLE dbo.Employees
