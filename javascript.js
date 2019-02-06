@@ -13,6 +13,7 @@ function handleFirstTab(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  addEventListeners();
   populatePage();
 });
 
@@ -57,7 +58,6 @@ function populatePage() {
         resetCompanyTotalDeduction();
         createBeneficiariesListItems(data);
         addToggleDependentsView();
-        addEventListeners();
       })
     } else {
       console.log('Response from GetEmployeesAndDependents endpoint was not OK');
