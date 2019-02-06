@@ -180,35 +180,39 @@ function removeEmployeeIdNonNumericCharacters() {
   }
 }
 
+function addEmployeeCB(event) {
+  event.preventDefault();
+  const employeeFormErrorMessage = document.getElementById('employeeFormErrorMessage');
+  employeeFormErrorMessage.style.display = 'none';
+
+  if (isEmployeeFormValid()) {
+    addEmployee();
+  } else {
+    employeeFormErrorMessage.style.display = 'block';
+  }
+}
+
+function addDependentCB(event) {
+  event.preventDefault();
+  const dependentFormErrorMessage = document.getElementById('dependentFormErrorMessage');
+  dependentFormErrorMessage.style.display = 'none';
+
+  if (isDependentFormValid()) {
+    addDependent();
+  } else {
+    dependentFormErrorMessage.style.display = 'block';
+  }
+}
+
 function addEventListeners() {
   const addEmployeeButton = document.getElementById('employeeFormSubmit');
   const addDependentButton = document.getElementById('dependentFormSubmit');
 
   document.getElementById('employeeId').addEventListener('blur', removeEmployeeIdNonNumericCharacters);
 
-  addEmployeeButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    const employeeFormErrorMessage = document.getElementById('employeeFormErrorMessage');
-    employeeFormErrorMessage.style.display = 'none';
+  addEmployeeButton.addEventListener('click', addEmployeeCB);
 
-    if (isEmployeeFormValid()) {
-      addEmployee();
-    } else {
-      employeeFormErrorMessage.style.display = 'block';
-    }
-  });
-
-  addDependentButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    const dependentFormErrorMessage = document.getElementById('dependentFormErrorMessage');
-    dependentFormErrorMessage.style.display = 'none';
-
-    if (isDependentFormValid()) {
-      addDependent();
-    } else {
-      dependentFormErrorMessage.style.display = 'block';
-    }
-  });
+  addDependentButton.addEventListener('click', addDependentCB);
 }
 
 function addEmployee() {
@@ -247,7 +251,8 @@ function addDependent() {
   const body = `employeeid=${dependent.employeeid}&firstname=${dependent.firstname}&lastname=${dependent.lastname}`;
   const errorElement = document.getElementById('dependentFormErrorMessage');
 
-  fetch(addDependentEndpoint, { method: 'POST', body: body, headers: { 'Content-type': 'application/x-www-form-urlencoded' } }).then(function(response) {
+  fetch(addDependentEndpoint, { method: 'POST', body: body, headers: { 'Content-type': 'application/x-www-form-urlencoded' } })
+  .then(function(response) {
     if (response.status === 200) {
       const confirmationElement = document.getElementById('confirmDependentAdded');
       displayConfirmationMessage(confirmationElement, dependent);
