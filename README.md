@@ -6,7 +6,7 @@ Welcome to Dagpay, a custom app that allows users to track payroll benefits dedu
 
 The Dagpay client is hosted in Microsoft Azure, and reached with the following URL:
 
-**_https://dagpay.z13.web.core.windows.net/index.html_**
+**_https://dagpaypayroll.z20.web.core.windows.net/_**
 
 The client has four sections:
 
