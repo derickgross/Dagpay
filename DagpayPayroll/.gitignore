@@ -265,3 +265,4 @@ __pycache__/
 
 # Publish profiles
 /Properties/PublishProfiles/*
+*.pubxml
