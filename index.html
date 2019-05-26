@@ -35,7 +35,7 @@
         <label id="employeeIdLabel" for="employeeId">
           Employee Id
         </label>
-        <input type="text" id="employeeId" class="formInput" name="employeeId" placeholder="Enter an integer value">
+        <input type="number" id="employeeId" class="formInput" name="employeeId" placeholder="Enter an integer value">
         <p id="employeeIdErrorMessage" class="errorMessage">Employee Id must only contain numeric characters.</p>
 
         <label id="employee-firstnameLabel" for="employeeFirstname">
@@ -48,10 +48,20 @@
         </label>
         <input type="text" id="employeeLastname" class="formInput" name="employeeLastname">
 
+        <label id="employeeDepartmentLabel" for="employeeDepartment">
+          Department
+        </label>
+        <input type="text" id="employeeDepartment" class="formInput" name="employeeDepartment">
+
+        <label id="employeeExperienceLabel" for="employeeExperience">
+          Experience
+        </label>
+        <input type="number" id="employeeExperience" class="formInput" name="employeeExperience" min="0" max="100" value="0">
+
         <button id="employeeFormSubmit" class="submitButton">
           Add Employee
         </button>
-        <p id="employeeFormErrorMessage" class="errorMessage">Please enter values for Employee Id, First Name, and Last Name.</p>
+        <p id="employeeFormErrorMessage" class="errorMessage">Please enter values for Employee Id, First Name, Last Name, Department, and Experience.</p>
         <p id="confirmEmployeeAdded" class="confirmationMessage"></p>
       </form>
     </section>

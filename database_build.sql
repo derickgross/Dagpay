@@ -11,6 +11,8 @@ CREATE TABLE dbo.Employees
     EmployeeId     int PRIMARY KEY NOT NULL,
     FirstName      nvarchar(50) NOT NULL,
     LastName       nvarchar(50) NOT NULL,
+    Department     nvarchar(50) NOT NULL,
+    Experience     int NOT NULL,
     BiweeklySalary int NOT NULL,
     Cost           int NOT NULL,
     DiscountFactor int NOT NULL
@@ -33,13 +35,21 @@ CREATE TABLE dbo.Dependents
 )
 GO
 
-INSERT INTO dbo.Employees(EmployeeId, FirstName, LastName, BiweeklySalary, Cost, DiscountFactor)
+INSERT INTO dbo.Employees(EmployeeId, FirstName, LastName, Department, Experience, BiweeklySalary, Cost, DiscountFactor)
 VALUES
-(001, 'Thomas', 'Keller', 2000, 1000, 100),
-(002, 'James', 'Richter', 2000, 1000, 100),
-(003, 'Mark', 'Hall', 2000, 1000, 100),
-(004, 'Darren', 'Graves', 2000, 1000, 100),
-(005, 'Alex', 'Rogers', 2000, 1000, 90)
+(001, 'Thomas', 'Keller', 'Accounting', 4, 2000, 1000, 100),
+(002, 'James', 'Richter', 'Accounting', 1, 2000, 1000, 100),
+(003, 'Mark', 'Hall', 'Software Development', 1, 2000, 1000, 100),
+(004, 'Darren', 'Graves', 'IT', 12, 2000, 1000, 100),
+(005, 'Alex', 'Rogers', 'IT', 1, 2000, 1000, 90),
+(006, 'Karen', 'Blackburn', 'Personnel', 15, 2000, 1000, 100),
+(006, 'Diane', 'Harvey', 'IT', 11, 2000, 1000, 100),
+(007, 'Anne', 'Perkins', 'Software Development', 9, 2000, 1000, 90),
+(008, 'Steve', 'Rogers', 'Personnel', 6, 2000, 1000, 100),
+(009, 'Olivia', 'Dunham', 'Security', 4, 2000, 1000, 100),
+(010, 'Brandon', 'Stark', 'Management', 8, 2000, 1000, 100),
+(011, 'Cersei', 'Lannister', 'Management', 11, 2000, 1000, 100),
+(012, 'Arthur', 'Dayne', 'Software Development', 5, 2000, 1000, 90)
 GO
 
 INSERT INTO dbo.Dependents(FirstName, LastName, EmployeeId, Cost, DiscountFactor)

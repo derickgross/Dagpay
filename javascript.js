@@ -1,6 +1,6 @@
-const addEmployeeEndpoint = `https://dagpaypayroll.azurewebsites.net/api/AddEmployee`;
-const addDependentEndpoint = `https://dagpaypayroll.azurewebsites.net/api/AddDependent`;
-const getEmployeesAndDependentsEndpoint = `https://dagpaypayroll.azurewebsites.net/api/GetEmployeesAndDependents`;
+const addEmployeeEndpoint = `https://dagpay2.azurewebsites.net/api/AddEmployee`;
+const addDependentEndpoint = `https://dagpay2.azurewebsites.net/api/AddDependent`;
+const getEmployeesAndDependentsEndpoint = `https://dagpay2.azurewebsites.net/api/GetEmployeesAndDependents`;
 let companyTotalDeduction = 0;
 
 window.addEventListener('keydown', handleFirstTab);
@@ -219,10 +219,12 @@ function addEmployee() {
   const employee = {
     employeeid: document.getElementById('employeeId').value,
     firstname: document.getElementById('employeeFirstname').value,
-    lastname: document.getElementById('employeeLastname').value
+    lastname: document.getElementById('employeeLastname').value,
+    department: document.getElementById('employeeDepartment').value,
+    experience: document.getElementById('employeeExperience').value
   }
 
-  const body = `employeeid=${employee.employeeid}&firstname=${employee.firstname}&lastname=${employee.lastname}`;
+  const body = `employeeid=${employee.employeeid}&firstname=${employee.firstname}&lastname=${employee.lastname}&department=${employee.department}&experience=${employee.experience}`;
   const errorElement = document.getElementById('employeeFormErrorMessage');
 
   fetch(addEmployeeEndpoint, { method: 'POST', body: body, headers: { 'Content-type': 'application/x-www-form-urlencoded' } })
