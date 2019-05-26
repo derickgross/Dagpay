@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./javascript.js"></script>
+    <!--<link rel="manifest" href="/manifest.json">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A payroll app">
+    <meta name="theme-color" content="#c4122f">
+    <title>Dagpay Payroll</title>
+</head>
+
+<body>
+    <header>
+        <h1>Dagpay Payroll</h1>
+    </header>
+
+    <main id="mainContent">
+        <section id="totalDeductions">
+            <h2>Total Deductions</h2>
+            <p><span class="money">$</span><span id="companyTotalDeduction" class="money">(calculating...)</span></p>
+        </section>
+        <section id="beneficiaries">
+            <h2>Beneficiaries</h2>
+            <p>Employees - click an employee to view dependents</p>
+            <ul id="beneficiariesList">
+                <li>No beneficiaries yet</li>
+            </ul>
+        </section>
+        <section id="addEmployee">
+            <h2>Add New Employee</h2>
+            <form action="" method="post" id="employeeForm">
+                <label id="employeeIdLabel" for="employeeId">
+                    Employee Id
+                </label>
+                <input type="number" id="employeeId" class="formInput" name="employeeId" placeholder="Enter an integer value">
+                <p id="employeeIdErrorMessage" class="errorMessage">Employee Id must only contain numeric characters.</p>
+
+                <label id="employee-firstnameLabel" for="employeeFirstname">
+                    First Name
+                </label>
+                <input type="text" id="employeeFirstname" class="formInput" name="employeeFirstname">
+
+                <label id="employeeLastnameLabel" for="employeeLastname">
+                    Last Name
+                </label>
+                <input type="text" id="employeeLastname" class="formInput" name="employeeLastname">
+
+                <label id="employeeDepartmentLabel" for="employeeDepartment">
+                    Department
+                </label>
+                <input type="text" id="employeeDepartment" class="formInput" name="employeeDepartment">
+
+                <label id="employeeExperienceLabel" for="employeeExperience">
+                    Experience
+                </label>
+                <input type="number" id="employeeExperience" class="formInput" name="employeeExperience" min="0" max="100" value="0">
+
+                <button id="employeeFormSubmit" class="submitButton">
+                    Add Employee
+                </button>
+                <p id="employeeFormErrorMessage" class="errorMessage">Please enter values for Employee Id, First Name, Last Name, Department, and Experience.</p>
+                <p id="confirmEmployeeAdded" class="confirmationMessage"></p>
+            </form>
+        </section>
+        <section id="addDependent">
+            <h2>Add New Dependent</h2>
+            <form action="" method="post" id="employee-form">
+                <label id="dependentEmployeeLabel" for="dependentEmployee">
+                    Employee
+                </label>
+                <select id="dependentEmployee" name="dependentEmployee">
+                    <option value="" disabled selected>Select the dependent's employee</option>
+                </select>
+
+                <label id="dependentFirstnameLabel" for="dependentFirstname">
+                    First Name
+                </label>
+                <input type="text" id="dependentFirstname" class="formInput" name="dependentFirstname">
+
+                <label id="edependentLastnameLabel" for="dependentLastname">
+                    Last Name
+                </label>
+                <input type="text" id="dependentLastname" class="formInput" name="dependentLastname">
+
+                <button id="dependentFormSubmit" class="submitButton">
+                    Add Dependent
+                </button>
+                <p id="dependentFormErrorMessage" class="errorMessage">Please enter values for Employee, First Name, and Last Name.</p>
+                <p id="confirmDependentAdded" class="confirmationMessage"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer">
+        Copyright (c) 2019 <a href="https://www.linkedin.com/in/derickgross/"><strong>Dagpay Payroll</strong></a> All Rights Reserved.
+    </footer>
+</body>
+
+</html>
