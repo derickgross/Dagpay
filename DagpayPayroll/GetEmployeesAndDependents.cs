@@ -3,7 +3,6 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Web;
-//using System.Web;
 using System.Data.SqlClient;
 using System.IO;
 using System.Net.Http;
@@ -20,7 +19,6 @@ namespace DagpayPayroll
 {
     public static class GetEmployeesAndDependents
     {
-        //private static SqlConnection connection = new SqlConnection();
         private static string connectionString = Environment.GetEnvironmentVariable("SQLConnectionString");
 
         [FunctionName("GetEmployeesAndDependents")]
