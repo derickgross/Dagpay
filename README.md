@@ -8,6 +8,10 @@ The Dagpay client is hosted in Microsoft Azure, and reached with the following U
 
 **_https://dagpaypayroll.z20.web.core.windows.net/_**
 
+Dagpay React, built with React using the same C# Azure Function endpoints as its vanilla JS predecessor, is hosted on Heroku:
+
+**_http://dagpay.herokuapp.com/_**
+
 The client has four sections:
 
 **Total Deductions** - the sum of deductions for all employees and dependents, which is updated as new beneficiaries are added.

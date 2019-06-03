@@ -56,7 +56,7 @@ namespace DagpayPayroll
             if ((employeeId != null) && (firstName != null) && (lastName != null))
             {
                 int employeeIdInt = Convert.ToInt32(employeeId);
-                var RowsAffected = 0; //Placeholder value
+                var RowsAffected = 0;
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
