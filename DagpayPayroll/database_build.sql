@@ -35,6 +35,15 @@ CREATE TABLE dbo.Dependents
 )
 GO
 
+CREATE TABLE dbo.Users
+(
+    Id int PRIMARY KEY IDENTITY (1, 1),
+    Username nvarchar(50) NOT NULL,
+    PasswordHash nvarchar(255) NOT NULL,
+    PasswordSalt nvarchar(255) NOT NULL
+)
+GO
+
 INSERT INTO dbo.Employees(EmployeeId, FirstName, LastName, Department, Experience, BiweeklySalary, Cost, DiscountFactor)
 VALUES
 (001, 'Thomas', 'Keller', 'Accounting', 4, 2000, 1000, 100),
