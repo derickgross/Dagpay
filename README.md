@@ -1,6 +1,6 @@
 # Dagpay
 
-Welcome to Dagpay, a custom app that allows users to track payroll benefits deductions for employees and their dependents.  Dagpay consists of a simple HTML, CSS and vanilla JavaScript single page app and C# Azure Function endpoints supported by an Azure SQL database.
+Welcome to Dagpay, a serverless app that allows users to track payroll benefits deductions for employees and their dependents.  Dagpay consists of a single page JavaScript application, and a serverless FaaS backend (C# Azure Functions) supported by an Azure SQL database.
 
 ## Dagpay front-end client
 
@@ -8,7 +8,7 @@ The Dagpay client is hosted in Microsoft Azure, and reached with the following U
 
 **_https://dagpaypayroll.z20.web.core.windows.net/_**
 
-Dagpay React, built with React using the same C# Azure Function endpoints as its vanilla JS predecessor, is hosted on Heroku:
+Dagpay React, built with React using the same serverless backend as its vanilla JS predecessor, is hosted on Heroku:
 
 **_http://dagpay.herokuapp.com/_**
 
